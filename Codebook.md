@@ -57,7 +57,7 @@ The variables in the final tidy data frame are:
 [76] "fBodyBodyGyroMag_mean"         "fBodyBodyGyroMag_std"          "fBodyBodyGyroMag_meanFreq"    
 [79] "fBodyBodyGyroJerkMag_mean"     "fBodyBodyGyroJerkMag_std"      "fBodyBodyGyroJerkMag_meanFreq"
 ```
-They were obtained for normalized values of the measurements. Measurement units are reletive values of each variable to its max value.  Each variable is bounded within [-1,1].
+They were obtained for normalized values of the measurements. Measurement units are relative values of each variable to its max value.  Each variable is bounded within [-1,1].
 
 ## **Transformations**
 
@@ -80,7 +80,7 @@ The script  `run_analysis.R`  does the following:
 
 1.	Downloads the data, save them as the file `data.zip`, and unzip it into the folder  `./data1/UCI HAR Dataset`
 2.	Merges the training and test sets (`X_train.txt`, `X_test.txt`)  to create the dataframe `datajoin`. Its dimension is 10299 x 561
-3.	Reads features names from the file `features.txt`. Then it corrects features names by replacing the symbols "(", ")", ",", "-" by "_" and deleting multiple instances of "_". Finally the corrects features names are used to appropriately label the data set with descriptive variable names.  
+3.	Reads features names from the file `features.txt`. Then it corrects features names by replacing the symbols "(", ")", ",", "-" by "\_" and deleting multiple instances of "\_". Finally the corrects features names are used to appropriately label the data set with descriptive variable names.  
 4.	Extracts the values of the mean and standard deviation for each measurement (columns containing mean() or std() in their names).
 5.	Adds the column `activitylabs` of activity labels merging the information from the files `y_train.txt` and `y_test.txt`. Then it uses the activity numbers in the data and replaces them by descriptive terms from the file `activity_labels.txt`. 
 6.	Merges the information from `subject_train.txt` and `subject_test.txt` to create the column `subjects` with subject numbers.
